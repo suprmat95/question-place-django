@@ -42,9 +42,6 @@ class QuestionSerializer(serializers.ModelSerializer):
     def get_created_at(self, instance):
         return instance.created_at.strftime('%d %B %Y')
 
-    def get_likes_count(self, instance):
-        return instance.voters.count()
-
     def get_user_has_answered(self, instance):
         request = self.context.get("request")
         return instance.answers.filter(author=request.user).exists()
