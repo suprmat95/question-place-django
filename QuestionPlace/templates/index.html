@@ -1,11 +1,15 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-        "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+{% load render_bundle from webpack_loader %}
+<!DOCTYPE html>
+<html lang="it" dir="ltr">
     <head>
         <title>Question Place</title>
     </head>
     <body>
         <h1>Vue JS</h1>
-        <div id="app"></div>
+        <div id="app">
+
+        </div>
+        {%  render_bundle  'app' %}
+
     </body>
 </html>
