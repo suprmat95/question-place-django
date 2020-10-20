@@ -31,7 +31,7 @@
                 type: Number,
                 required: true
             },
-            answerEdit: {
+            previousAnswer: {
                 type: String,
                 required: true
             },
@@ -51,7 +51,7 @@
             },
         data() {
             return {
-                answerBody: this.answerEdit,
+                answerBody: this.previousAnswer,
                 error: null
             }
         },
