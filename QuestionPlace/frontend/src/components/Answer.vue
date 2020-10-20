@@ -1,10 +1,11 @@
 <template lang="html">
-    <div class="single-answe">
+    <div class="single-answer">
         <p class="text-muted">
             <strong>{{answer.author}}</strong> ha risposto il {{answer.created_at}}
         </p>
         <p>{{answer.body}}</p>
     </div>
+
 </template>
 
 <script>

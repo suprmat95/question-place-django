@@ -11,7 +11,7 @@ from ..api.serializers import QuestionSerializer, AnswerSerializer
 from ..api.permission import IsAuthorOrReadOnly
 
 class QuestionViewSet(viewsets.ModelViewSet):
-    queryset = Question.objects.all()
+    queryset = Question.objects.all().order_by("-created_at")
     lookup_field = "slug"
     serializer_class = QuestionSerializer
     permission_classes = [IsAuthorOrReadOnly, IsAuthenticated]
@@ -40,7 +40,7 @@ class QuestionAnswerListAPIView(generics.ListAPIView):
 
     def get_queryset(self):
         kwarg_slug = self.kwargs.get("slug")
-        return Answer.objects.filter(question__slug=kwarg_slug)
+        return Answer.objects.filter(question__slug=kwarg_slug).order_by("-created_at")
 
 class AnswerLikeAPIView(APIView):
     serializer_class = AnswerSerializer
