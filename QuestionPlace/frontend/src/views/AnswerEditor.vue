@@ -35,7 +35,7 @@
                 type: String,
                 required: true
             },
-            question_slug: {
+            questionSlug: {
                 type: String,
                 required: true
             }
@@ -45,7 +45,7 @@
             await apiService(endpoint)
                     .then(data =>{
                         to.params.answerEdit = data.body;
-                        to.params.question_slug = data.question_slug;
+                        to.params.questionSlug = data.question_slug;
                     })
             return next();
             },
@@ -63,7 +63,7 @@
                         .then(()=> {
                             this.$router.push({
                                 name: "question",
-                                params: {slug: this.question_slug}
+                                params: {slug: this.questionSlug}
                             })
                         })
 

@@ -4,7 +4,7 @@
             <div class="col-12">
                 <h1 class="mb-3">Aggiungi una domanda</h1>
                 <form @submit.prevent="onSubmit">
-                    <textarea v-model="question_body"
+                    <textarea v-model="questionBody"
                               class="form-control"
                               placeholder="Cosa vuoi chiedere?"
                               rows="3"></textarea>
@@ -30,23 +30,23 @@
 
         data() {
             return {
-                question_body: null,
+                questionBody: null,
                 error: null
             }
         },
 
         methods:{
             onSubmit() {
-                if(!this.question_body){
+                if(!this.questionBody){
                     this.error = "Il campo non puo essere vuoto."
                 }
-                else if (this.question_body.length> 240){
+                else if (this.questionBody.length> 240){
                     this.error = "Non superare i 240 caratteri."
                 }
                 else {
                     let endpoint = "/api/questions/";
                     let method = "POST";
-                    apiService(endpoint, method, {content: this.question_body})
+                    apiService(endpoint, method, {content: this.questionBody})
                         .then(question_data => {
                             this.$router.push({
                                 name: "question",

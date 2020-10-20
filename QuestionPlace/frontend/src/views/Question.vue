@@ -2,6 +2,10 @@
     <div class="single-question mt-2">
         <div class="container">
             <h1>{{ question.content }}</h1>
+
+            <QuestionActions
+            v-if="isOwner"
+            :slug="slug"/>
             <p class="mb-0"> Domanda aggiunta da:
                 <span class="author-name">{{ question.author }}</span>
             </p>
@@ -59,6 +63,7 @@
 <script>
     import {apiService} from "../common/api.service";
     import AnswerComponent from "../components/Answer";
+    import QuestionActions from "../components/QuestionActions";
     export default {
         name: "Question",
 
@@ -69,6 +74,7 @@
             }
         },
         components: {
+            QuestionActions,
             AnswerComponent
         },
         data() {
@@ -84,7 +90,11 @@
                 requestUser: null
             }
         },
-
+        computed: {
+            isOwner() {
+                return this.question.author === this.requestUser;
+            }
+        },
         methods: {
             setPageTitle(title) {
                 document.title = title;
@@ -145,7 +155,7 @@
                     this.userHasAnswered = false
                 }
                 catch {
-                    console.log(err);
+                    console.log(error);
                 }
             }
         },
