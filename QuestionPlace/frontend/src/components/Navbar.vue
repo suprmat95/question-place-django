@@ -21,10 +21,11 @@
                         </router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link
-                                :to="{ name: 'about'}"
+                       <a href="#"></a>
+                         <router-link
+                                :to="{ name: 'question-editor'}"
                                 class="btn btn-sm btn-danger"
-                        > About
+                        > Aggiungi domanda
                         </router-link>
                     </li>
                     <li class="nav-item">

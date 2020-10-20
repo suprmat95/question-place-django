@@ -1,9 +1,8 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue"
-
-import About from "./views/About";
-
+import Question from "./views/Question.vue";
+import QuestionEditor from "./views/QuestionEditor";
 Vue.use(Router);
 
 export default new Router({
@@ -15,9 +14,16 @@ export default new Router({
             component: Home
         },
         {
-            path: "/about",
-            name: "about",
-            component: About
-        }
+            path: "/question/:slug",
+            name: "question",
+            component: Question,
+            props: true
+        },
+        {
+            path: "/ask",
+            name: "question-editor",
+            component: QuestionEditor
+        },
+
     ]
 });
