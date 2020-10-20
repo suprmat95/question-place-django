@@ -39,6 +39,7 @@
             <AnswerComponent
                 v-for="(answer, index) in answers"
                 :answer="answer"
+                :requestUser="requestUser"
                 :key="index"/>
             <div class="my-4">
                 <p v-show="loadingAnswers">...loading...</p>
@@ -77,13 +78,17 @@
                 showForm: false,
                 newAnswerBody: null,
                 error: null,
-                next: null
+                next: null,
+                requestUser: null
             }
         },
 
         methods: {
             setPageTitle(title) {
                 document.title = title;
+            },
+            setRequestUser(){
+                this.requestUser = window.localStorage.getItem("username")
             },
             getQuestionData() {
                 let endpoint = `/api/questions/${this.slug}/`
@@ -134,6 +139,7 @@
         created() {
             this.getQuestionData();
             this.getQuestionAnswers();
+            this.setRequestUser();
         }
     }
 </script>
