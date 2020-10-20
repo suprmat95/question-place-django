@@ -5,8 +5,13 @@
         </p>
         <p>{{answer.body}}</p>
         <div v-if="isAnswerAuthor()" class="answer-owner">
-            <button
-                    class="btn btn-sm btn-outline-secondary mr-1">Modifica</button>
+            <router-link
+                    :to="{name:'answer-editor', params: {id: answer.id}}"
+                    class="btn btn-sm btn-outline-secondary mr-1"
+                    ><span>Modifica</span>
+
+            </router-link>
+
             <button
                     class="btn btn-sm btn-outline-danger"
                     @click="triggerDeleteAnswer"
