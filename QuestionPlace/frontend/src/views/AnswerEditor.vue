@@ -35,7 +35,7 @@
                 type: String,
                 required: true
             },
-            questionSlug: {
+            questionSlug:{
                 type: String,
                 required: true
             }
@@ -43,7 +43,7 @@
         async beforeRouteEnter(to, from, next) {
             let endpoint =`/api/answers/${to.params.id}/`;
             await apiService(endpoint)
-                    .then(data =>{
+                    .then(data=>{
                         to.params.answerEdit = data.body;
                         to.params.questionSlug = data.question_slug;
                     })
@@ -72,18 +72,6 @@
                 }
             }
         }
-    //    methods: {
-    //        async getAnswerData() {
-    //            let endpoint =`/api/answers/${this.id}/`;
-    //            await apiService(endpoint)
-    //                .then(data =>{
-    //                    this.answerBody = data.body;
-    //                })
-    //        }
-    //    },
-    //    created() {
-    //        this.getAnswerData();
-    //    }
     }
 </script>
 
