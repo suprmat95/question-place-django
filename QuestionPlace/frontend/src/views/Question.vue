@@ -40,7 +40,9 @@
                 v-for="(answer, index) in answers"
                 :answer="answer"
                 :requestUser="requestUser"
-                :key="index"/>
+                :key="index"
+                @delete-answer="deleteAnswer"
+            />
             <div class="my-4">
                 <p v-show="loadingAnswers">...loading...</p>
                 <button
@@ -133,6 +135,17 @@
                 }
                 else {
                     this.error = "Il campo non puo essere vuoto."
+                }
+            },
+            async deleteAnswer(answer){
+                let endpoint = `/api/answers/${answer.id}/`
+                try {
+                    await apiService(endpoint,"DELETE");
+                    this.answers.splice(this.answers.indexOf(answer), 1);
+                    this.userHasAnswered = false
+                }
+                catch {
+                    console.log(err);
                 }
             }
         },

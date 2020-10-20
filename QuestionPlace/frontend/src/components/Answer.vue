@@ -7,7 +7,10 @@
         <div v-if="isAnswerAuthor()" class="answer-owner">
             <button
                     class="btn btn-sm btn-outline-secondary mr-1">Modifica</button>
-            <button class="btn btn-sm btn-outline-danger">Cancella</button>
+            <button
+                    class="btn btn-sm btn-outline-danger"
+                    @click="triggerDeleteAnswer"
+                    >Cancella</button>
 
         </div>
     </div>
@@ -30,6 +33,9 @@
         methods: {
             isAnswerAuthor() {
                 return this.answer.author === this.requestUser;
+            },
+            triggerDeleteAnswer() {
+                this.$emit("delete-answer",this.answer)
             }
         }
     }
