@@ -24,7 +24,7 @@
                     <li class="nav-item mx-1">
                         <a
                                 class="btn btn-sm btn-outline-secondary"
-                                href="/accounts/logout"
+                                href="/accounts/logout/?next=/"
                         > Logout
                         </a>
                     </li>
@@ -47,6 +47,7 @@
     }
     .nav-item {
         border-bottom: 20px;
+        margin-bottom: 5px;
     }
     .my-navbar {
         border-bottom: 1px solid #DDD;

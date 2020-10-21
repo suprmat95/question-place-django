@@ -44,7 +44,7 @@
             let endpoint =`/api/answers/${to.params.id}/`;
             await apiService(endpoint)
                     .then(data=>{
-                        to.params.answerEdit = data.body;
+                        to.params.previousAnswer = data.body;
                         to.params.questionSlug = data.question_slug;
                     })
             return next();
