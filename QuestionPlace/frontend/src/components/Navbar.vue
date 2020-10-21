@@ -12,8 +12,8 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item mx-1">
                        <a href="#"></a>
                          <router-link
                                 :to="{ name: 'question-editor'}"
@@ -21,7 +21,7 @@
                         > Aggiungi domanda
                         </router-link>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item mx-1">
                         <a
                                 class="btn btn-sm btn-outline-secondary"
                                 href="/accounts/logout"
