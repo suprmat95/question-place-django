@@ -1,4 +1,4 @@
-<template>
+<template lang="html">
     <div class="home-view">
         <div class="container">
             <div class="mt-2">

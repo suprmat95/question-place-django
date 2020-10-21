@@ -1,39 +1,41 @@
 {% extends "base.html" %}
 
-    {% block style %}
+{% block style %}
 
-    <style media="screen">
-        .auth-box {
-            border: 3px solid lightgrey;
-            border-radius: 10px;
-            padding-top: 25px;
-            padding-bottom: 25px;
-            width: 600px;
-            margin: auto;
-        }
-        .login-form-container {
-            width: 400px;
-            margin: auto;
-        }
+<style media="screen">
+    * {
+        font-family: "Playfair Display", serif;
+    }
 
-        .registration-form-container {
-            width: 400px;
-            margin: auto;
-        }
+    .auth-box {
+        border: 3px solid lightgrey;
+        border-radius: 10px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        width: 600px;
+        margin: auto;
+    }
 
-        .outer-area{
-            margin-top: 100px;
-        }
+    .login-form-container {
+        width: 400px;
+        margin: auto;
 
-         html, body  {
-            height: 100%;
-            color: red;
-            font-family: "Playfair Display", serif;
-        }
-    </style>
-    {% endblock %}
+    }
 
- {% block content %}
+    .registration-form-container {
+        width: 400px;
+        margin: auto;
+    }
+
+    .outer-area {
+        margin-top: 100px;
+    }
+
+
+</style>
+{% endblock %}
+
+{% block content %}
 <div class="outer-area">
     <div class="auth-box text-center">
         {% block auth %}

@@ -1,4 +1,4 @@
-<template>
+<template lang="html">
   <div id="app">
     <NavbarComponent />
     <router-view />
@@ -36,7 +36,7 @@
 </script>
 
 <style>
- body{
+ * {
     font-family: "Playfair Display", serif;
   }
 #app {
